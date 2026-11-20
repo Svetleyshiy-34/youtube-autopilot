@@ -1,0 +1,9 @@
+client_secret.json
+token.json
+output/
+voices/
+done.txt
+log.txt
+.venv/
+__pycache__/
+*.pyc

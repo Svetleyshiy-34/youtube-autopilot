@@ -1,0 +1,27 @@
+[channel]
+niche = "мини уроки по программированию"
+audience = "новички, которые только начинают"
+style = "простым дружелюбным языком, без сложных терминов"
+language = "русский"
+slides_count = 5
+topics_file = "topics.txt"
+done_file = "done.txt"
+output_dir = "output"
+signature = "Видео создано с помощью ИИ."
+
+[llm]
+provider = "ollama"
+model = "qwen2.5:3b"
+base_url = "http://localhost:11434"
+api_key_env = ""
+temperature = 0.7
+num_ctx = 2048
+
+[tts]
+engine = "piper"
+voice = "voices/ru_RU-denis-medium.onnx"
+
+[youtube]
+upload = false
+category_id = 27
+privacy = "public"

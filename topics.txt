@@ -1,0 +1,3 @@
+Что такое переменная в Python
+Условия if/else в Python
+Циклы for и while в Python
