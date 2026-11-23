@@ -50,3 +50,13 @@ def resolve(cfg: dict, p: str) -> Path:
     path = Path(p).expanduser()
     return path if path.is_absolute() else cfg["_root"] / path
 
+def pick_topic(cfg: dict) -> str:
+    topics_file = resolve(cfg, cfg["channel"]["topics_file"])
+    done_file = resolve(cfg, cfg["channel"]["done_file"])
+    done = set(done_file.read_text(encoding="utf-8").splitlines()) if done_file.exists() else set()
+    for line in topics_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and line not in done:
+            return line
+        sys.exit("No topics left: add new lines to" + str(topics_file))
+
